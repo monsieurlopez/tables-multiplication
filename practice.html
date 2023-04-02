@@ -23,10 +23,11 @@
 	
 	<h1 class="display-1"> Tables de Multiplication </h1>
 	<nav class="nav nav-pills flex-column flex-sm-row">
-		<a class="flex-sm-fill text-sm-center nav-link" aria-current="page" href="index.html"> Tables </a>
-		<a class="flex-sm-fill text-sm-center nav-link" href="etudier.html"> Étudier </a>
-        <a class="flex-sm-fill text-sm-center nav-link active" href="practice.html"> Exercices  </a>
-		<a class="flex-sm-fill text-sm-center nav-link" href="#"> À propos </a>
+		<a class="flex-sm-fill text-sm-center nav-link" href="etudier.html"> Tables </a>
+		<a class="flex-sm-fill text-sm-center nav-link" aria-current="page" href="index.html"> Étudier </a>
+        <a class="flex-sm-fill text-sm-center nav-link active" href="practice.html"> Practice  </a>
+		<a class="flex-sm-fill text-sm-center nav-link" href="exercices.html"> Exercices  </a>
+		<a class="flex-sm-fill text-sm-center nav-link disabled" href="#"> À propos </a>
 	</nav>
 </header>	
 
@@ -54,14 +55,7 @@
 
 	<button id="btn1" class="btn btn-primary" > Démarrer </button>
 	<br><br>
-	<hr>
-
-    <label for="customRange2" class="form-label"> Choisissez jusqu'à quel niveau de tables vous voulez faire des multiplications </label>
-    <input type="range" class="form-range" min="1" max="10" id="customRange2">
-	<div id="output"> Niveau </div>
 	
-	<button id="btn2" class="btn btn-primary" > Démarrer </button>
-    <br><br>
 	<table class="table table-hover">
 		<tr>
 			<th> Base </th>
@@ -74,9 +68,6 @@
 	<br>
 	<div class="unique">
 		<input type="text" id="numero">  <button class="btn btn-primary" id="verificar"> Vérifier </button> <button class="btn btn-primary" id="suivante"> Opération suivante </button> 
-	</div>
-	<div class="level"> 
-		<input type="text" id="numero1">  <button class="btn btn-primary" id="verificar1"> Vérifier1 </button> <button class="btn btn-primary" id="suivante1"> Opération suivante1 </button>
 	</div>
 	<div class="icons">
 
@@ -138,12 +129,6 @@
       	event.preventDefault();
     	}
 		});
-	$("#numero1").keypress(function(event) {
-    	var inputValue = event.charCode;
-    	if (inputValue < 48 || inputValue > 57) {
-      	event.preventDefault();
-    	}
-		});
 
 	$("#verificar").click(function() {
 		$(".result").addClass("show");
@@ -190,21 +175,6 @@
 		$(".unique").addClass("prueba");
 	});
 
-	//Funcion que detecta el cambio de nivel:
-	$(".form-range").on("change", function(){
-		$(".table tr").slice(1).remove();
-		$("#numero1").val("");
-		$("#btn2").prop("disabled", false);
-		$("#btn1").prop("disabled", true);
-		$(".level").addClass("show");
-		$("#right").removeClass("show");
-		$("#wrong").removeClass("show");
-		$("#numero").addClass("hide");
-		$("#verificar").addClass("hide");
-		$("#suivante").addClass("hide");
-	});
- 
-
 	$(".display-1").addClass("titre1");
 	$(".display-2").addClass("titre2");
 	$(".display-3").addClass("titre3");
@@ -214,66 +184,6 @@
 	$("#btn2").prop("disabled", true);
 	$("#verificar").prop("disabled", true);
 	$("#suivante").prop("disabled", true);
-
-	
-
-	//Código para el boton 2:
-	$("#btn2").on("click", function(){
-		$("#btn1").prop("disabled", true);
-		
-
-	base2 = Math.floor(Math.random() * outputValue) + 1;
-
-	randomBase = Math.floor(Math.random() * 11);
-
-	var trDinamico = "<tr id='fila'><td>" + base2 + "</td><td>x</td><td>" + randomBase + "</td><td>=</td><td class='result'>" + (base2 * randomBase) + "</td></tr>";
-	$(".table").append(trDinamico);
-	$(this).prop("disabled", true);
-
-	$("#numero1").prop("disabled", false);
-	
-	});
-
-	$("#verificar1").click(function() {
-		$(".result").addClass("show");
-    	var inputNumero = parseInt($("#numero1").val());
-    	resultado2 = base2 * randomBase;
-    	if (inputNumero === resultado2) {
-      		$("#right").addClass("show");
-    	} else {
-			$("#wrong").addClass("show");
-    	}
-		$("#numero1").prop("disabled", true);
-	});
-
-	$("#suivante1").click(function() {
-		
-		$(".table tr").slice(1).remove();
-
-		base2 = Math.floor(Math.random() * outputValue) + 1;
-		randomBase = Math.floor(Math.random() * 11);
-
-        var trDinamico = "<tr id='fila'><td>" + base2 + "</td><td>x</td><td>" + randomBase + "</td><td>=</td><td class='result'>" + (base2 * randomBase) + "</td></tr>";
-        $(".table").append(trDinamico);
-
-		$("#numero1").val("");
-
-		$("#right").removeClass("show");
-		$("#wrong").removeClass("show");
-
-		$("#numero1").prop("disabled", false);
-
-	});
-	
-	//Control de nivel: 
-	const range = document.getElementById('customRange2');
-	const output = document.getElementById('output');
-	let outputValue;
-
-	range.addEventListener('input', () => {
-  	outputValue = range.value;
-  	output.textContent = outputValue;
-	});
 
 
 })();
