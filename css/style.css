@@ -1,0 +1,66 @@
+select{
+    cursor: pointer;
+}
+
+.titre1{
+    font-size: 3.5rem;
+    font-family: null;
+    font-style:  null;
+    font-weight: 300;
+    line-height: headings-line-height;
+    text-align: left;
+    padding-left: 100px; 
+}
+
+.titre2{
+    font-size: 2.5rem;
+    font-family: null;
+    font-style:  null;
+    font-weight: 300;
+    line-height: headings-line-height;
+}
+
+.titre3{
+    font-size: 1rem;
+    font-family: null;
+    font-style:  null;
+    font-weight: 300;
+    line-height: headings-line-height; 
+}
+
+.result{
+    display: none;
+}
+
+#right{
+    display: none;
+}
+#wrong{
+    display: none;
+}
+
+.icons{
+    /*border: 1px solid blue;*/
+    width: 250px;
+    height: 80px;
+    padding: 4px;
+    margin-top:10px;
+    text-align: center;
+    border-radius: 15% 15% 15% 15% / 15% 15% 15% 15% ;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+  
+#output {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 10px;
+}
+.prueba{
+    display: block;
+}
+  
+  
