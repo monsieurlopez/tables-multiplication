@@ -74,3 +74,41 @@ label {
 .prueba{
     display: block;
 }
+
+/* ESTILOS PARA LA TABLA */
+/*@font-face {
+    font-family: "Kids-Brush";
+    src: url("../fonts/Kids-Brush-Playful-Font/KidsBrush-WyEKG.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}*/
+
+.table-adapted {
+    font-size: 1.5rem;
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+}
+
+
+.table-adapted th {
+    background-color: #ffcccb;
+    color: #333;
+    padding: 10px;
+    border: 2px solid #f5a9a9;
+}
+
+.table-adapted td {
+    padding: 10px;
+    border: 2px solid #ddd;
+    background-color: #fff;
+}
+
+.table-adapted tr:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.3s ease;
+}
+
+.table-adapted {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    /*font-family: "Kids-Brush", sans-serif;*/
+}
