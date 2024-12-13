@@ -33,62 +33,65 @@
 
   <body>
     <header>
-      <nav class="navbar">
-        <div class="container-sm justify-content-between">
-          <h1 class="d-flex align-items-center gap-2"> <i class="fa-solid fa-calculator"></i>Aprende a multiplicar</h1>
-          <div class="nav-container-items">
-			<ul class="nav">
-				<li class="nav-item">
-					<a class="nav-link" href="etudier.html"> Tables </a>
-				  </li>
+		<nav class="navbar">
+		  <div class="container-sm justify-content-between">
+			<h1 class="d-flex align-items-center gap-2"> <i class="fa-solid fa-calculator"></i>Aprende a multiplicar Etudier</h1>
+			<div class="nav-container-items">
+			  <ul class="nav nav-pills">
 				  <li class="nav-item">
-					<a class="nav-link active" aria-current="page" href="index.html">
-					  Étudier
-					</a>
-				  </li class="nav-item">
-				  <li>
-					<a class="nav-link" href="practice.html"> Practice </a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="exercices.html"> Exercices </a>
-				  </li>
-			</ul>
-          </div>
-        </div>
-      </nav>
-    </header>
+					  <a class="nav-link active" aria-current="page" href="index.html"> Tables </a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="etudier.html">
+						Étudier
+					  </a>
+					</li class="nav-item">
+					<li>
+					  <a class="nav-link" href="practice.html"> Practice </a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="exercices.html"> Exercices </a>
+					</li>
+			  </ul>
+			</div>
+		  </div>
+		</nav>
+	  </header>
 
-    <div class="container">
-      <hr />
-      <h2 class="">Sélectionner une table</h2>
-      <select id="cmbBase" class="form-control">
-        <option value="1" selected>Table de 1</option>
-        <option value="2">Table de 2</option>
-        <option value="3">Table de 3</option>
-        <option value="4">Table de 4</option>
-        <option value="5">Table de 5</option>
-        <option value="6">Table de 6</option>
-        <option value="7">Table de 7</option>
-        <option value="8">Table de 8</option>
-        <option value="9">Table de 9</option>
-        <option value="10">Table de 10</option>
-      </select>
+	  <section class="section-etudier w-75">
+		<div class="container">
+			
+			<h2 class="">Sélectionner une table</h2>
+			<select id="cmbBase" class="form-control">
+			  <option value="1" selected>Table de 1</option>
+			  <option value="2">Table de 2</option>
+			  <option value="3">Table de 3</option>
+			  <option value="4">Table de 4</option>
+			  <option value="5">Table de 5</option>
+			  <option value="6">Table de 6</option>
+			  <option value="7">Table de 7</option>
+			  <option value="8">Table de 8</option>
+			  <option value="9">Table de 9</option>
+			  <option value="10">Table de 10</option>
+			</select>
+	  
+			<br />
+	  
+			<button id="btn1" class="btn btn-primary">Afficher la table</button>
+			<br />
+	  
+			<table class="table table-hover">
+			  <tr>
+				<th>Base</th>
+				<th>x</th>
+				<th>Numéro</th>
+				<th>=</th>
+				<th>Résultat</th>
+			  </tr>
+			</table>
+		  </div>
 
-      <br />
-
-      <button id="btn1" class="btn btn-primary">Ajouter une ligne</button>
-      <br />
-
-      <table class="table table-hover">
-        <tr>
-          <th>Base</th>
-          <th>x</th>
-          <th>Numéro</th>
-          <th>=</th>
-          <th>Résultat</th>
-        </tr>
-      </table>
-    </div>
+	  </section>
 
     <script>
       (function () {
@@ -96,9 +99,7 @@
 
         $("#btn1").on("click", function () {
           var base = $("#cmbBase").val();
-
-          if (contador <= 9) {
-            contador++;
+          for (let contador = 0; contador < 11; contador++) {
             var trDinamico =
               "<tr><td>" +
               base +
@@ -108,8 +109,8 @@
               base * contador +
               "</td></tr>";
             $(".table").append(trDinamico);
-          } else {
-            alert("Dans ce niveau, nous n'apprendrons que jusqu'au numéro 10.");
+
+            $(this).prop("disabled", true);
           }
         });
 
@@ -117,6 +118,7 @@
         $("#cmbBase").on("change", function () {
           contador = 0;
           $(".table tr").slice(1).remove();
+          $("#btn1").prop("disabled", false);
         });
 
         $(".display-1").addClass("titre1");
