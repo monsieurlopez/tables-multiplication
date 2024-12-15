@@ -114,8 +114,9 @@ label {
     /*font-family: "Kids-Brush", sans-serif;*/
 }
 
-@media (max-width: 768px) {
-    section {
+/*@media (max-width: 576px) {
+    .section-tables {
         width: 100%;
+        margin: 1rem auto;
     }
-}
+}*/
