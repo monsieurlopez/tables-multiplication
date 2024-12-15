@@ -42,7 +42,13 @@ header {
     }
 
     .nav-container-items {
-        font-size: 4rem;
+        font-size: 3.75rem;
+    }
+
+    .nav-container-items .nav {
+        display: flex;
+        list-style: none;
+        gap: 0rem !important; 
     }
 
     section h2 {
