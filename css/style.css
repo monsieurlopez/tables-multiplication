@@ -22,6 +22,35 @@ header {
     height: 6rem;
 }
 
+@media (max-width: 992px) {
+    header, .navbar {
+        height: 25rem;
+    }
+
+    .container-navbar{
+        margin: 1rem auto;
+        row-gap: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+    .navbar h1 {
+        font-size: 6rem;
+    }
+
+    .nav-container-items {
+        font-size: 3.5rem;
+    }
+
+    section h2 {
+        font-size: 4rem;
+        text-align: center;
+    }
+}
+
 .nav-container-items .nav {
     display: flex;
     list-style: none;
@@ -119,7 +148,7 @@ label {
         font-size: 2rem; /* Incrementa el tamaño de la fuente */
     }
 
-    .table-adapted th, 
+    .table-adapted th,
     .table-adapted td {
         padding: 15px; /* Reduce el espacio entre las celdas */
     }
@@ -134,7 +163,11 @@ label {
 
     /* Aumentar el tamaño del select */
     #cmbBase {
-        font-size: 1.5rem;
+        width: 50%;
+        text-align: center;
+        font-size: 3rem;
+        margin: auto;
+        height: auto;
     }
 
     /* Espacios adicionales para la tabla */
