@@ -38,7 +38,6 @@ header {
 
 section {
     margin: 2rem auto;
-    width: 75%;
 }
 
 .result{
@@ -114,9 +113,33 @@ label {
     /*font-family: "Kids-Brush", sans-serif;*/
 }
 
-/*@media (max-width: 576px) {
-    .section-tables {
-        width: 100%;
+/* Media query para dispositivos con ancho menor a 992px */
+@media (max-width: 992px) {
+    .table-adapted {
+        font-size: 2rem; /* Incrementa el tamaño de la fuente */
+    }
+
+    .table-adapted th, 
+    .table-adapted td {
+        padding: 15px; /* Reduce el espacio entre las celdas */
+    }
+
+    .table-adapted th {
+        border-width: 3px; /* Bordes más grandes */
+    }
+
+    .table-adapted td {
+        border-width: 2px;
+    }
+
+    /* Aumentar el tamaño del select */
+    #cmbBase {
+        font-size: 1.5rem;
+    }
+
+    /* Espacios adicionales para la tabla */
+    section.section-tables {
+        padding: 1.5rem;
         margin: 1rem auto;
     }
-}*/
+}
