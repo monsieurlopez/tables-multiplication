@@ -38,6 +38,7 @@ header {
 
 section {
     margin: 2rem auto;
+    width: 75%;
 }
 
 .result{
@@ -111,4 +112,10 @@ label {
 .table-adapted {
     font-family: 'Comic Sans MS', cursive, sans-serif;
     /*font-family: "Kids-Brush", sans-serif;*/
+}
+
+@media (max-width: 768px) {
+    section {
+        width: 100%;
+    }
 }
