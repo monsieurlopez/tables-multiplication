@@ -42,12 +42,13 @@ header {
     }
 
     .nav-container-items {
-        font-size: 3.5rem;
+        font-size: 4rem;
     }
 
     section h2 {
-        font-size: 4rem;
+        font-size: 5rem;
         text-align: center;
+        align-items: center;
     }
 }
 
@@ -138,14 +139,21 @@ label {
 }
 
 .table-adapted {
+    margin: 1.5rem auto;
     font-family: 'Comic Sans MS', cursive, sans-serif;
     /*font-family: "Kids-Brush", sans-serif;*/
 }
 
 /* Media query para dispositivos con ancho menor a 992px */
 @media (max-width: 992px) {
+    .config-table {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
     .table-adapted {
-        font-size: 2rem; /* Incrementa el tamaño de la fuente */
+        font-size: 5.5rem; /* Incrementa el tamaño de la fuente */
     }
 
     .table-adapted th,
@@ -163,9 +171,9 @@ label {
 
     /* Aumentar el tamaño del select */
     #cmbBase {
-        width: 50%;
+        width: 40%;
         text-align: center;
-        font-size: 3rem;
+        font-size: 4.5rem;
         margin: auto;
         height: auto;
     }
