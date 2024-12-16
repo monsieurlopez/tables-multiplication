@@ -33,8 +33,9 @@ body {
     height: 8rem;
 }
 
-.navbar .container-navbar {
+.container-navbar {
     margin: 0 auto;
+    display: flex;
 }
 
 .fa-calculator {
@@ -89,6 +90,17 @@ body {
     height: auto;
     color: #477D69;
     font-weight: bold;
+}
+
+/* Cambios para pantalla portatil */
+@media (max-width: 1300px) {
+    .text-title {
+        font-size: 3.5rem !important;
+    }
+
+    .nav-container-items {
+        font-size: 2.25rem;
+    }
 }
 
 /* Cambios para pantalla media */
