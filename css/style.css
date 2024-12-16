@@ -35,15 +35,18 @@ body {
 
 .fa-calculator {
     font-size: 5rem;
+    color: whitesmoke;
 }
 
-.text-title {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+.text-title, .config-table h2 {
+    font-family: "Kids-Brush", sans-serif;
     font-weight: bold !important;
+    color: whitesmoke;
 }
 
 .nav-container-items {
     font-size: 3rem;
+    font-family: "Kids-Brush", sans-serif;
 }
 
 .config-table {
@@ -52,6 +55,8 @@ body {
     justify-content: center;
     text-align: center;
     margin: 3rem auto;
+    font-family: "Kids-Brush", sans-serif;
+
 }
 
 .config-table h2 {
@@ -159,22 +164,20 @@ label {
 }
 
 /* ESTILOS PARA LA TABLA */
-/*@font-face {
+@font-face {
     font-family: "Kids-Brush";
-    src: url("../fonts/Kids-Brush-Playful-Font/KidsBrush-WyEKG.ttf") format("truetype");
+    src: url("../fonts/WildYouth-Regular.otf") format("truetype");
     font-weight: normal;
     font-style: normal;
-}*/
+}
 
 .table-adapted {
     font-size: 3rem;
     border-collapse: collapse;
     margin: 1.5rem auto;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    /*font-family: "Kids-Brush", sans-serif;*/
-
+    /*font-family: 'Comic Sans MS', cursive, sans-serif;*/
+    font-family: "Kids-Brush", sans-serif;
 }
-
 
 .table-adapted th {
     color: #333;
@@ -185,7 +188,6 @@ label {
 .table-adapted td {
     padding: 10px;
     border: 2px solid #ddd;
-    
 }
 
 .table-adapted tr:hover {

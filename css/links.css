@@ -1,0 +1,59 @@
+/* Estilo general de los enlaces */
+.nav-container-items .nav {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-container-items .nav-item a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  /* Estilo único para cada forma */
+  .red-shape {
+    background-color: red;
+    border-radius: 50% 0% 50% 0%; /* Forma no uniforme */
+    padding: 1rem;
+  }
+  
+  .blue-shape {
+    background-color: blue;
+    border-radius: 20% 80% 20% 80%; /* Forma ondulada */
+    padding: 1rem;
+  }
+  
+  .yellow-shape {
+    background-color: yellow;
+    border-radius: 70% 30% 70% 30%; /* Más redondeada en un lado */
+    padding: 1rem;
+    color: black; /* Contraste por ser fondo claro */
+  }
+  
+  .green-shape {
+    background-color: green;
+    border-radius: 40% 40% 40% 40%; /* Totalmente redondeado */
+    padding: 1rem;
+  }
+  
+  /* Efectos interactivos */
+  .nav-item a:hover {
+    transform: scale(1.1); /* Aumenta un poco el tamaño */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Añade un poco de sombra */
+    transition: all 0.3s ease-in-out; /* Suaviza la animación */
+  }
+  
+  /* Opcional: Espaciado para evitar que las formas se toquen */
+  .nav-item {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
