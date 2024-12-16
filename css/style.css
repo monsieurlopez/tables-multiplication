@@ -81,6 +81,7 @@ body {
     text-align: center;
     margin: 3rem auto;
     font-family: 'Comic Sans MS', cursive, sans-serif;
+    gap: 1rem;
 }
 
 #cmbBase {
@@ -108,6 +109,11 @@ section {
 
 .result{
     display: none;
+}
+
+#btn1 {
+    font-size: 2.5rem;
+    width: 20%;
 }
 
 #right{
@@ -221,6 +227,10 @@ label {
         font-size: 4.5rem;
         margin: auto;
         height: auto;
+    }
+    #btn1 {
+        font-size: 4.5rem;
+        width: 40%;
     }
 
     /* Espacios adicionales para la tabla */
