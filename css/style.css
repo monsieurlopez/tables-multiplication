@@ -38,7 +38,7 @@ body {
     color: whitesmoke;
 }
 
-.text-title, .config-table h2 {
+.text-title {
     font-family: "Kids-Brush", sans-serif;
     font-weight: bold !important;
     color: whitesmoke;
@@ -55,8 +55,7 @@ body {
     justify-content: center;
     text-align: center;
     margin: 3rem auto;
-    font-family: "Kids-Brush", sans-serif;
-
+    font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 .config-table h2 {
@@ -100,7 +99,7 @@ body {
     .nav-container-items .nav {
         display: flex;
         list-style: none;
-        gap: 0rem !important; 
+        gap: 0rem !important;
     }
 
     section h2 {
@@ -173,45 +172,37 @@ label {
 
 .table-adapted {
     font-size: 3rem;
-    border-collapse: collapse;
     margin: 1.5rem auto;
-    /*font-family: 'Comic Sans MS', cursive, sans-serif;*/
-    font-family: "Kids-Brush", sans-serif;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    /*font-family: "Kids-Brush", sans-serif;*/
+    border: none;
 }
 
 .table-adapted th {
     color: #333;
     padding: 10px;
-    border: 2px solid #f5a9a9;
+    border: none !important;
 }
 
 .table-adapted td {
     padding: 10px;
-    border: 2px solid #ddd;
+    border: none !important;
 }
 
 .table-adapted tr:hover {
-    background-color: #f1f1f1;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    transition: background-color 1s ease;
 }
 
 /* Media query para dispositivos con ancho menor a 992px */
 @media (max-width: 992px) {
     .table-adapted {
-        font-size: 5.5rem; /* Incrementa el tamaño de la fuente */
+        font-size: 5.5rem;
     }
 
     .table-adapted th,
     .table-adapted td {
         padding: 15px; /* Reduce el espacio entre las celdas */
-    }
-
-    .table-adapted th {
-        border-width: 3px; /* Bordes más grandes */
-    }
-
-    .table-adapted td {
-        border-width: 2px;
     }
 
     /* Aumentar el tamaño del select */
