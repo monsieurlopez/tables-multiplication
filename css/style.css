@@ -92,48 +92,6 @@ body {
     font-weight: bold;
 }
 
-/* Cambios para pantalla portatil */
-@media (max-width: 1300px) {
-    .text-title {
-        font-size: 3.5rem !important;
-    }
-
-    .nav-container-items {
-        font-size: 2.25rem;
-    }
-}
-
-/* Cambios para pantalla media */
-@media (max-width: 992px) {
-    header, .navbar {
-        height: 25rem;
-    }
-
-    .container-navbar{
-        margin: 1rem auto;
-        row-gap: 3rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        align-items: center;
-    }
-
-    .navbar h1 {
-        font-size: 6rem;
-    }
-
-    .nav-container-items {
-        font-size: 3.75rem;
-    }
-
-    .nav-container-items .nav {
-        display: flex;
-        list-style: none;
-        gap: 0rem !important;
-    }
-}
-
 .nav-container-items .nav {
     gap: 1rem;
 }
@@ -219,6 +177,34 @@ label {
 
 /* Media query para dispositivos con ancho menor a 992px */
 @media (max-width: 992px) {
+    header, .navbar {
+        height: 25rem;
+    }
+
+    .container-navbar{
+        margin: 1rem auto;
+        row-gap: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+    .navbar h1 {
+        font-size: 6rem;
+    }
+
+    .nav-container-items {
+        font-size: 3.75rem;
+    }
+
+    .nav-container-items .nav {
+        display: flex;
+        list-style: none;
+        gap: 0rem !important;
+    }
+
     .table-adapted {
         font-size: 5.5rem;
     }
@@ -243,3 +229,15 @@ label {
         margin: 1rem auto;
     }
 }
+
+/* Cambios para pantalla portatil */
+@media (max-width: 1300px) {
+    .text-title {
+        font-size: 3.5rem !important;
+    }
+
+    .nav-container-items {
+        font-size: 2.25rem;
+    }
+}
+
