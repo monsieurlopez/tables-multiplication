@@ -33,6 +33,10 @@ body {
     height: 8rem;
 }
 
+.navbar .container-navbar {
+    margin: 0 auto;
+}
+
 .fa-calculator {
     font-size: 5rem;
     color: whitesmoke;
@@ -49,6 +53,26 @@ body {
     font-family: "Kids-Brush", sans-serif;
 }
 
+.nav-container-items .nav {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-container-items .nav-link-page {
+    padding: 0.5rem 1rem;
+    font-weight: normal;
+    text-align: center;
+    background-color: transparent !important;
+    transition: font-weight 0.2s ease-in-out;
+}
+
+.nav-container-items .nav-link:hover {
+    font-weight: bold;
+}
+
 .config-table {
     display: flex;
     align-items: center;
@@ -58,18 +82,13 @@ body {
     font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
-.config-table h2 {
-    width: 30%;
-    font-size: 3rem;
-    text-align: center;
-    align-items: center;
-}
-
 #cmbBase {
     width: 30%;
     text-align: center;
     font-size: 2.5rem;
     height: auto;
+    color: #477D69;
+    font-weight: bold;
 }
 
 /* Cambios para pantalla media */
@@ -101,20 +120,10 @@ body {
         list-style: none;
         gap: 0rem !important;
     }
-
-    section h2 {
-        font-size: 5rem;
-        text-align: center;
-        align-items: center;
-    }
 }
 
 .nav-container-items .nav {
-    display: flex;
-    list-style: none;
     gap: 1rem;
-    margin: 0;
-    padding: 0;
 }
 
 .nav-container-items {
@@ -179,12 +188,13 @@ label {
 }
 
 .table-adapted th {
-    color: #333;
+    color: whitesmoke;
     padding: 10px;
-    border: none !important;
+    border-bottom: 1px solid whitesmoke !important;
 }
 
 .table-adapted td {
+    color: whitesmoke;
     padding: 10px;
     border: none !important;
 }
@@ -192,6 +202,7 @@ label {
 .table-adapted tr:hover {
     font-weight: bold;
     transition: background-color 1s ease;
+    border: 1px solid whitesmoke !important;
 }
 
 /* Media query para dispositivos con ancho menor a 992px */
@@ -207,7 +218,7 @@ label {
 
     /* Aumentar el tamaño del select */
     #cmbBase {
-        width: 40%;
+        width: 60%;
         text-align: center;
         font-size: 4.5rem;
         margin: auto;
