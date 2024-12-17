@@ -45,8 +45,9 @@ body {
 
 .text-title {
     font-family: "Kids-Brush", sans-serif;
-    font-weight: bold !important;
+    font-weight: bold;
     color: whitesmoke;
+    font-size: 5rem;
 }
 
 .nav-container-items {
@@ -181,13 +182,24 @@ label {
     border: 1px solid whitesmoke !important;
 }
 
+/* Cambios para pantalla portatil */
+@media (max-width: 1300px) {
+    .text-title {
+        font-size: 3.5rem;
+    }
+
+    .nav-container-items {
+        font-size: 2.25rem;
+    }
+}
+
 /* Media query para dispositivos con ancho menor a 992px */
 @media (max-width: 992px) {
     header, .navbar {
         height: 25rem;
     }
 
-    .container-navbar{
+    .container-navbar {
         margin: 1rem auto;
         row-gap: 3rem;
         display: flex;
@@ -197,18 +209,15 @@ label {
         align-items: center;
     }
 
-    .navbar h1 {
+    .text-title {
         font-size: 6rem;
     }
 
     .nav-container-items {
         font-size: 3.75rem;
-    }
-
-    .nav-container-items .nav {
         display: flex;
         list-style: none;
-        gap: 0rem !important;
+        gap: 0rem;
     }
 
     .table-adapted {
@@ -240,14 +249,15 @@ label {
     }
 }
 
-/* Cambios para pantalla portatil */
-@media (max-width: 1300px) {
-    .text-title {
-        font-size: 3.5rem !important;
+/* Media query para dispositivos con ancho menor a 576px */
+@media (min-width: 576px) {
+    
+    .text-title, .fa-calculator {
+        font-size: 7rem;
     }
 
     .nav-container-items {
-        font-size: 2.25rem;
+        font-size: 5rem;
     }
 }
 
