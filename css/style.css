@@ -52,10 +52,10 @@ body {
 
 .nav-container-items {
     font-size: 3rem;
-    font-family: "Kids-Brush", sans-serif;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
-.nav-container-items .nav {
+.nav-container-items {
     display: flex;
     list-style: none;
     gap: 1rem;
@@ -115,23 +115,6 @@ section {
 #btn1 {
     font-size: 2.5rem;
     width: 20%;
-}
-
-#right{
-    display: none;
-}
-#wrong{
-    display: none;
-}
-
-.icons{
-    /*border: 1px solid blue;*/
-    width: 250px;
-    height: 80px;
-    padding: 4px;
-    margin-top:10px;
-    text-align: center;
-    border-radius: 15% 15% 15% 15% / 15% 15% 15% 15% ;
 }
 
 label {
@@ -250,14 +233,14 @@ label {
 }
 
 /* Media query para dispositivos con ancho menor a 576px */
-@media (min-width: 576px) {
-    
+@media (max-width: 576px) {
+
     .text-title, .fa-calculator {
-        font-size: 7rem;
+        font-size: 7rem !important;
     }
 
     .nav-container-items {
-        font-size: 5rem;
+        font-size: 6rem !important;
     }
 }
 
