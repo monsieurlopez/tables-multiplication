@@ -86,7 +86,7 @@
 
 	<div class="control-operations text-center">
 		<div class="unique">
-			<button class="btn btn-primary" id="verificar"> Enviar </button> <button class="btn btn-primary" id="suivante"> Operación siguiente</button> 
+			<button class="btn btn-primary verificar"> Enviar </button> <button class="btn btn-primary suivante"> Operación siguiente</button> 
 		</div>
 		<div class="icons">
 
@@ -98,7 +98,7 @@
 			<div id="wrong" class="d-none text-center" >
 				<i class="fa-solid fa-thumbs-down"></i>
 				<h3 class=""> Incorrecto <h3>
-				<h4 class="d-none" id="resultado"> </h4>
+				<h4 class="d-none resultado"> </h4>
 			</div>
 	
 		</div>
@@ -130,43 +130,43 @@
                 <td>${randomBase}</td>
                 <td>=</td>
                 <td>
-                    <input type="text" id="numero" class="input-resultado" placeholder="?">
+                    <input type="text" class="input-resultado numero" placeholder="?">
                 </td>
             </tr>
         `;
         $(".table").append(trDinamico);
 		$(this).prop("disabled", true);
-		$("#numero1").prop("disabled", true);
-		$("#numero").val("");
+		$(".numero").prop("disabled", true);
+		$(".numero").val("");
 
-		$("#numero").prop("disabled", false);
-		$("#verificar").prop("disabled", false);
-		$("#suivante").prop("disabled", false);
+		$(".numero").prop("disabled", false);
+		$(".verificar").prop("disabled", false);
+		$(".suivante").prop("disabled", false);
 
     });
 
-	$("#numero").keypress(function(event) {
+	$(".numero").keypress(function(event) {
     	var inputValue = event.charCode;
     	if (inputValue < 48 || inputValue > 57) {
       	event.preventDefault();
     	}
-		});
+	});
 
-	$("#verificar").click(function() {
+	$(".verificar").click(function() {
 		$(".result").addClass("show");
-    	var inputNumero = parseInt($("#numero").val());
+    	var inputNumero = parseInt($(".numero").val());
     	resultado = base * randomBase;
     	if (inputNumero === resultado) {
       		$("#right").removeClass("d-none");
     	} else {
 			$("#wrong").removeClass("d-none");
-			$("#resultado").removeClass("d-none");
-			$("#resultado").text("El resultado es : " + resultado);
+			$(".resultado").removeClass("d-none");
+			$(".resultado").text("El resultado es : " + resultado);
     	}
-		$("#numero").prop("disabled", true);
+		$(".numero").prop("disabled", true);
 	});
 
-	$("#suivante").click(function() {
+	$(".suivante").click(function() {
 		base = 0;
 		$(".table tr").slice(1).remove();
 
@@ -180,18 +180,18 @@
                 <td>${randomBase}</td>
                 <td>=</td>
                 <td>
-                    <input type="text" id="numero" class="input-resultado" placeholder="?">
+                    <input type="text" class="input-resultado numero" placeholder="?">
                 </td>
             </tr>
         `;
         $(".table").append(trDinamico);
 
-		$("#numero").val("");
+		$(".numero").val("");
 
 		$("#right").addClass("d-none");
 		$("#wrong").addClass("d-none");
 
-		$("#numero").prop("disabled", false);
+		$(".numero").prop("disabled", false);
 
 	});
 
@@ -199,24 +199,19 @@
 	$("#cmbBase").on("change", function(){
 		base = 0;
 		$(".table tr").slice(1).remove();
-		$("#numero").val("");
+		$(".numero").val("");
 		$("#btn1").prop("disabled", false);
 		$(".level").removeClass("show");
 		$("#btn2").prop("disabled", true);
 		$("#right").removeClass("show");
 		$("#wrong").removeClass("show");
-		$(".unique").addClass("prueba");
 	});
-
-	$(".display-1").addClass("titre1");
-	$(".display-2").addClass("titre2");
-	$(".display-3").addClass("titre3");
 
 	$(".level").addClass("hide");
 	$("#btn1").prop("disabled", true);
 	$("#btn2").prop("disabled", true);
-	$("#verificar").prop("disabled", true);
-	$("#suivante").prop("disabled", true);
+	$(".verificar").prop("disabled", true);
+	$(".suivante").prop("disabled", true);
 
 
 })();
