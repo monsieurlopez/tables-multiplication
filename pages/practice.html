@@ -130,18 +130,16 @@
                 <td>${randomBase}</td>
                 <td>=</td>
                 <td>
-                    <input type="text" class="input-resultado numero" placeholder="?">
+                    <input type="number" class="input-resultado numero" placeholder="?">
                 </td>
             </tr>
         `;
         $(".table").append(trDinamico);
 		$(this).prop("disabled", true);
-		$(".numero").prop("disabled", true);
 		$(".numero").val("");
 
-		$(".numero").prop("disabled", false);
-		$(".verificar").prop("disabled", false);
-		$(".suivante").prop("disabled", false);
+		$(".numero, .verificar, .suivante").prop("disabled", false);
+		$(".suivante").prop("disabled", true);
 
     });
 
@@ -163,7 +161,8 @@
 			$(".resultado").removeClass("d-none");
 			$(".resultado").text("El resultado es : " + resultado);
     	}
-		$(".numero").prop("disabled", true);
+		$(".numero, .verificar").prop("disabled", true);
+		$(".suivante").prop("disabled", false);
 	});
 
 	$(".suivante").click(function() {
@@ -180,7 +179,7 @@
                 <td>${randomBase}</td>
                 <td>=</td>
                 <td>
-                    <input type="text" class="input-resultado numero" placeholder="?">
+                    <input type="number" class="input-resultado numero" placeholder="?">
                 </td>
             </tr>
         `;
@@ -191,7 +190,8 @@
 		$("#right").addClass("d-none");
 		$("#wrong").addClass("d-none");
 
-		$(".numero").prop("disabled", false);
+		$(".verificar, .numero").prop("disabled", false);
+		$(".suivante").prop("disabled", true);
 
 	});
 
