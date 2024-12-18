@@ -94,6 +94,12 @@ body {
   font-weight: bold;
 }
 
+#btn1 {
+    width: 25%;
+    font-size: 2.25rem;
+    padding: auto;
+}
+
 .nav-container-items .nav {
   gap: 1rem;
 }
