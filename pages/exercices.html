@@ -57,7 +57,7 @@
 
 
 <section class="section-tables container-lg">
-	<div class="control_challlenge text-center">
+	<div class="control_challenge text-center">
 
 		<label for="customRange2" class="form-label label_text"> Elige la tabla hasta la que quieres hacer multiplicaciones </label>
 		<input type="range" class="form-range slideToUnlock" min="1" max="10" id="customRange2">
@@ -127,7 +127,7 @@
         $(".verificar, .suivante").prop("disabled", true);
 	});
 
-	$(".btn-comenzar").prop("disabled", true);
+	$(".btn-comenzar, .verificar, .suivante").prop("disabled", true);
 
 	//Código para el boton 2:
 	$(".btn-comenzar").on("click", function(){
@@ -154,6 +154,7 @@
 		$(".numero").val("");
 
 		$(".numero, .verificar, .suivante").prop("disabled", false);
+		$(".suivante").prop("disabled", true);
 	
 	});
 
@@ -168,11 +169,11 @@
 			$(".resultado").removeClass("d-none");
 			$(".resultado").text("El resultado es : " + resultado);
     	}
-		$(".numero").prop("disabled", true);
+		$(".numero, .verificar").prop("disabled", true);
+		$(".suivante").prop("disabled", false);
 	});
 
 	$(".suivante").click(function() {
-		
 		$(".table tr").slice(1).remove();
 
 		base2 = Math.floor(Math.random() * outputValue) + 1;
@@ -199,6 +200,8 @@
 
 		$(".numero").prop("disabled", false);
 
+		$(".verificar").prop("disabled", false);
+		$(".suivante").prop("disabled", true);
 	});
 	
 	//Control de nivel:

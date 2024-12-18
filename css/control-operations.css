@@ -36,7 +36,7 @@
 
 .unique .verificar,
 .unique .suivante,
-.control_challlenge .btn-comenzar {
+.control_challenge .btn-comenzar {
   font-family: "Comic Sans MS", cursive, sans-serif;
   width: 25%;
   font-size: 2.25rem;
@@ -87,15 +87,71 @@ input[type="range"]::-moz-range-thumb:active {
 
 /* ================================================================= */
 /* Estilo label input range */
-.control_challlenge .label_text {
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    color: whitesmoke;
-    font-size: 2.75rem;
-    margin-bottom: 2rem;
+.control_challenge .label_text {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: whitesmoke;
+  font-size: 2.75rem;
+  margin-bottom: 2rem;
 }
 
-.control_challlenge .level_challenge {
-    color: whitesmoke;
+.control_challenge .level_challenge {
+  color: whitesmoke;
+  font-size: 4rem;
+  margin-top: 2rem !important;
+}
+
+@media (max-width: 992px) {
+  .control_challenge .label_text {
+    font-size: 3.25rem;
+    margin-bottom: 4rem;
+  }
+
+  .control_challenge .level_challenge {
+    margin-bottom: 1rem;
+    font-size: 4.5rem;
+  }
+
+  .control_challenge .btn-comenzar {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 4.5rem;
+    width: 40%;
+  }
+
+  .control-operations .unique .verificar,
+  .control-operations .unique .suivante {
+    width: 45%;
+    font-size: 3.75rem;
+    text-align: center;
+  }
+
+  /* Ajustar tamaño de la estrella en input[type="range"] */
+  input[type="range"]::-webkit-slider-thumb {
+    width: 70px; /* Aumentamos el ancho */
+    height: 70px; /* Aumentamos la altura */
+    margin-top: -30px; /* Ajuste vertical para centrar */
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    width: 70px; /* Aumentamos el ancho */
+    height: 70px; /* Aumentamos la altura */
+  }
+
+  /* Ajustar input numero */
+  .table .numero {
+    width: 35%;
+    font-size: 5.5rem;
+  }
+
+  .icons .fa-thumbs-up, .icons .fa-thumbs-down {
+    margin: 2rem;
+    font-size: 15rem;
+  }
+
+  .icons h3 {
+    font-size: 5.5rem;
+  }
+
+  .icons .resultado {
     font-size: 4rem;
-    margin-top: 2rem !important;
+  }
 }

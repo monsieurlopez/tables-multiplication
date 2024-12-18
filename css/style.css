@@ -1,223 +1,225 @@
 main {
-    padding: 0px;
-    margin: 0px;
+  padding: 0px;
+  margin: 0px;
 }
 
 header {
-    display: fixed;
-    top: 0;
-    left: 0;
-    margin: 0rem auto;
-    width: 100%;
-    height: 8rem;
-    background-color: transparent;
+  display: fixed;
+  top: 0;
+  left: 0;
+  margin: 0rem auto;
+  width: 100%;
+  height: 8rem;
+  background-color: transparent;
 }
 
 body {
-    background-image: url("../images/img-pizarra.png");
-    background-size: cover;
-    background-attachment: fixed;
+  background-image: url("../images/img-pizarra.png");
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .table {
-    background-color: transparent !important;
+  background-color: transparent !important;
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    align-items: center;
-    margin: 0px;
-    padding: 0px;
-    height: 8rem;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+  height: 8rem;
 }
 
 .container-navbar {
-    margin: 0 auto;
-    display: flex;
+  margin: 0 auto;
+  display: flex;
 }
 
 .fa-calculator {
-    font-size: 5rem;
-    color: whitesmoke;
+  font-size: 5rem;
+  color: whitesmoke;
 }
 
 .text-title {
-    font-family: "Kids-Brush", sans-serif;
-    font-weight: bold;
-    color: whitesmoke;
-    font-size: 5rem;
+  font-family: "Kids-Brush", sans-serif;
+  font-weight: bold;
+  color: whitesmoke;
+  font-size: 5rem;
 }
 
 .nav-container-items {
-    font-size: 3rem;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 3rem;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 .nav-container-items {
-    display: flex;
-    list-style: none;
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-container-items .nav-link-page {
-    padding: 0.5rem 1rem;
-    font-weight: normal;
-    text-align: center;
-    background-color: transparent !important;
-    transition: font-weight 0.2s ease-in-out;
+  padding: 0.5rem 1rem;
+  font-weight: normal;
+  text-align: center;
+  background-color: transparent !important;
+  transition: font-weight 0.2s ease-in-out;
 }
 
 .nav-container-items .nav-link:hover {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .config-table {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin: 3rem auto;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    gap: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 3rem auto;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  gap: 1rem;
 }
 
 #cmbBase {
-    width: 30%;
-    text-align: center;
-    font-size: 2.5rem;
-    height: auto;
-    color: #477D69;
-    font-weight: bold;
+  width: 30%;
+  text-align: center;
+  font-size: 2.5rem;
+  height: auto;
+  color: #477d69;
+  font-weight: bold;
 }
 
 .nav-container-items .nav {
-    gap: 1rem;
+  gap: 1rem;
 }
 
 .nav-container-items {
-    border: 0.1rem transparent white;
-    border-radius: 1rem;
-    padding: 0rem 0.5rem 0rem 0.5rem;
+  border: 0.1rem transparent white;
+  border-radius: 1rem;
+  padding: 0rem 0.5rem 0rem 0.5rem;
 }
 
 section {
-    margin: 2rem auto;
+  margin: 2rem auto;
 }
 
 /* ESTILOS PARA LA TABLA */
 @font-face {
-    font-family: "Kids-Brush";
-    src: url("../fonts/WildYouth-Regular.otf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Kids-Brush";
+  src: url("../fonts/WildYouth-Regular.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 .table-adapted {
-    font-size: 3rem;
-    margin: 1.5rem auto;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    /*font-family: "Kids-Brush", sans-serif;*/
-    border: none;
+  font-size: 3rem;
+  margin: 1.5rem auto;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  /*font-family: "Kids-Brush", sans-serif;*/
+  border: none;
 }
 
 .table-adapted th {
-    color: whitesmoke;
-    padding: 10px;
-    border-bottom: 1px solid whitesmoke !important;
+  color: whitesmoke;
+  padding: 10px;
+  border-bottom: 1px solid whitesmoke !important;
 }
 
 .table-adapted td {
-    color: whitesmoke;
-    padding: 10px;
-    border: none !important;
+  color: whitesmoke;
+  padding: 10px;
+  border: none !important;
 }
 
 .table-adapted tr:hover {
-    font-weight: bold;
-    transition: background-color 1s ease;
-    border: 1px solid whitesmoke !important;
+  font-weight: bold;
+  transition: background-color 1s ease;
+  border: 1px solid whitesmoke !important;
 }
 
 /* Cambios para pantalla portatil */
 @media (max-width: 1300px) {
-    .text-title {
-        font-size: 3.5rem;
-    }
+  .text-title {
+    font-size: 3.5rem;
+  }
 
-    .nav-container-items {
-        font-size: 2.25rem;
-    }
+  .nav-container-items {
+    font-size: 2.25rem;
+  }
 }
 
 /* Media query para dispositivos con ancho menor a 992px */
 @media (max-width: 992px) {
-    header, .navbar {
-        height: 25rem;
-    }
+  header,
+  .navbar {
+    height: 25rem;
+  }
 
-    .container-navbar {
-        margin: 1rem auto;
-        row-gap: 3rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        align-items: center;
-    }
+  .container-navbar {
+    margin: 1rem auto;
+    row-gap: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
 
-    .text-title {
-        font-size: 6rem;
-    }
+  .text-title {
+    font-size: 6rem;
+  }
 
-    .nav-container-items {
-        font-size: 3.75rem;
-        display: flex;
-        list-style: none;
-        gap: 0rem;
-    }
+  .nav-container-items {
+    font-size: 3.75rem;
+    display: flex;
+    list-style: none;
+    gap: 0rem;
+  }
 
-    .table-adapted {
-        font-size: 5.5rem;
-    }
+  .table-adapted {
+    font-size: 5.5rem;
+  }
 
-    .table-adapted th,
-    .table-adapted td {
-        padding: 15px; /* Reduce el espacio entre las celdas */
-    }
+  .table-adapted th,
+  .table-adapted td {
+    padding: 15px; /* Reduce el espacio entre las celdas */
+  }
 
-    /* Aumentar el tamaño del select */
-    #cmbBase {
-        width: 60%;
-        text-align: center;
-        font-size: 4.5rem;
-        margin: auto;
-        height: auto;
-    }
-    #btn1 {
-        font-size: 4.5rem;
-        width: 40%;
-    }
+  /* Aumentar el tamaño del select */
+  #cmbBase {
+    width: 60%;
+    text-align: center;
+    font-size: 4.5rem;
+    margin: auto;
+    height: auto;
+  }
 
-    /* Espacios adicionales para la tabla */
-    section.section-tables {
-        padding: 1.5rem;
-        margin: 1rem auto;
-    }
+  #btn1 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 4.5rem;
+    width: 40%;
+  }
+
+  /* Espacios adicionales para la tabla */
+  section.section-tables {
+    padding: 1.5rem;
+    margin: 1rem auto;
+  }
 }
 
 /* Media query para dispositivos con ancho menor a 576px */
 @media (max-width: 576px) {
+  .text-title,
+  .fa-calculator {
+    font-size: 7rem !important;
+  }
 
-    .text-title, .fa-calculator {
-        font-size: 7rem !important;
-    }
-
-    .nav-container-items {
-        font-size: 6rem !important;
-    }
+  .nav-container-items {
+    font-size: 6rem !important;
+  }
 }
-
