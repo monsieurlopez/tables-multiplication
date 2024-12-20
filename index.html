@@ -1,8 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Tables de Multiplication</title>
+    <meta name="title" content="Aprende a multiplicar" />
+    <meta
+      name="description"
+      content="Sitio web dedicado a los niños para el aprendizaje de las tablas de multiplicar. De la teoría a la práctica."
+    />
+    <meta
+      name="keywords"
+      content="TablasDeMultiplicar, Matemáticas, Multiplicación, Multiplicar, Ejercicios"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="Spanish" />
+    <meta name="author" content="Sergio Lopez Ruiz" />
+    
+    <title>Aprende a multiplicar</title>
 
     <!-- Importacion del jQuery -->
     <script src="js/lib/jquery-2.1.4.min.js"></script>
@@ -10,8 +23,8 @@
     <!-- Importacion del Bootstrap -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
 
-    <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="css/links.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/links.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -24,7 +37,7 @@
       crossorigin="anonymous"
     ></script>
 
-	<!-- Font Awesome -->
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -46,10 +59,14 @@
                 <a class="nav-link-page" href="index.html">Tablas</a>
               </li>
               <li class="nav-item blue-shape">
-                <a class="nav-link-page" href="./pages/etudier.html">Estudiar</a>
+                <a class="nav-link-page" href="./pages/etudier.html"
+                  >Estudiar</a
+                >
               </li>
               <li class="nav-item purple-shape">
-                <a class="nav-link-page" href="./pages/practice.html">Practicar</a>
+                <a class="nav-link-page" href="./pages/practice.html"
+                  >Practicar</a
+                >
               </li>
               <li class="nav-item green-shape">
                 <a class="nav-link-page" href="./pages/exercices.html">Retos</a>
@@ -60,40 +77,39 @@
       </nav>
     </header>
 
-	  <section class="section-tables container-lg">
+    <section class="section-tables container-lg">
       <div class="config-table">
-          <select id="cmbBase" class="form-control">
-            <option value=""> Selecciona una tabla </option>
-            <option value="1">Table de 1</option>
-            <option value="2">Table de 2</option>
-            <option value="3">Table de 3</option>
-            <option value="4">Table de 4</option>
-            <option value="5">Table de 5</option>
-            <option value="6">Table de 6</option>
-            <option value="7">Table de 7</option>
-            <option value="8">Table de 8</option>
-            <option value="9">Table de 9</option>
-            <option value="10">Table de 10</option>
-          </select>
+        <select id="cmbBase" class="form-control">
+          <option value="">Selecciona una tabla</option>
+          <option value="1">Table de 1</option>
+          <option value="2">Table de 2</option>
+          <option value="3">Table de 3</option>
+          <option value="4">Table de 4</option>
+          <option value="5">Table de 5</option>
+          <option value="6">Table de 6</option>
+          <option value="7">Table de 7</option>
+          <option value="8">Table de 8</option>
+          <option value="9">Table de 9</option>
+          <option value="10">Table de 10</option>
+        </select>
       </div>
-	  
-			<table class="table table-borderless text-center table-adapted">
-			  <tr>
-				<th>Base</th>
-				<th>x</th>
-				<th>Número</th>
-				<th>=</th>
-				<th>Resultado</th>
-			  </tr>
-			</table>
 
-	  </section>
+      <table class="table table-borderless text-center table-adapted">
+        <tr>
+          <th>Base</th>
+          <th>x</th>
+          <th>Número</th>
+          <th>=</th>
+          <th>Resultado</th>
+        </tr>
+      </table>
+    </section>
 
     <script>
       (function () {
         var contador = 0;
 
-        function initTable () {
+        function initTable() {
           var base = $("#cmbBase").val();
           if (!base) return;
           contador = 0;
@@ -118,7 +134,6 @@
         $("#cmbBase").on("change", function () {
           initTable();
         });
-
       })();
     </script>
   </body>
