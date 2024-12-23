@@ -118,6 +118,10 @@ section {
   font-size: 3em;
 }
 
+#button_reset {
+  font-size: 3.5rem;
+}
+
 /* ESTILOS PARA LA TABLA */
 @font-face {
   font-family: "Kids-Brush";

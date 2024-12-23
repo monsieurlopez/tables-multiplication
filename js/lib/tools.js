@@ -1,11 +1,14 @@
-export const createAlert = (title, text, icon, confirmButtonText, buttonClose = true, width = "60em") => {
+export const createAlert = (title, titleText = null, text, icon, confirmButtonText = null, footer = null, buttonClose = true, width = "60em") => {
 
     Swal.fire({
         title: title,
+        titleText: titleText,
         text: text,
         icon: icon, // Otros valores: 'error', 'warning', 'info', 'question'
         confirmButtonText: confirmButtonText,
+        showConfirmButton: !!confirmButtonText,
         showCloseButton: buttonClose,
-        widht: width,
+        width: width,
+        footer: footer
     });
 };

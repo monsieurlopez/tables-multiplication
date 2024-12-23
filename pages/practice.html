@@ -63,6 +63,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <!-- Fin Font Awesome -->
+	<!-- Sweetalert 2 -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<!-- Fin Sweetalert 2 -->
 </head>
 
 
@@ -147,21 +150,39 @@
 </section>
 
 
-<script>
+<script type="module">
 
+import { createAlert } from '../js/lib/tools.js';
 
 (function(){
 
-	var base = 0;
-    var randomBase = 0;
-    var resultado = 0;
+	let base = 0;
+    let randomBase = 0;
+    let resultado = 0;
+	let aciertos = 0;
+
+	let combinacionesGeneradas = [];
 
     $("#btn1").on("click", function(){
 
 		base = $("#cmbBase").val();
 		if (!base) return;
-        randomBase = Math.floor(Math.random() * 11);
-		resultado = base * randomBase;
+        
+		let esUnico = false;
+
+		while (!esUnico) {
+			randomBase = Math.floor(Math.random() * 11);
+			resultado = base * randomBase;
+
+			// Verificacion
+			const combinacion = `${base}x${randomBase}`;
+			if (!combinacionesGeneradas.includes(combinacion)) {
+				combinacionesGeneradas.push(combinacion); // Almacena la nueva combinación
+				esUnico = true; // Sale del bucle
+			}
+		}
+
+		console.log(combinacionesGeneradas);
 
 		const trDinamico = `
             <tr>
@@ -181,6 +202,8 @@
 		$(".numero, .verificar, .suivante").prop("disabled", false);
 		$(".suivante").prop("disabled", true);
 
+		$(".numero").trigger("focus");
+
     });
 
 	$(".numero").keypress(function(event) {
@@ -196,6 +219,7 @@
     	resultado = base * randomBase;
     	if (inputNumero === resultado) {
       		$("#right").removeClass("d-none");
+			aciertos++;
     	} else {
 			$("#wrong").removeClass("d-none");
 			$(".resultado").removeClass("d-none");
@@ -203,6 +227,7 @@
     	}
 		$(".numero, .verificar").prop("disabled", true);
 		$(".suivante").prop("disabled", false);
+		console.log("Aciertos: " + aciertos);
 	});
 
 	$(".suivante").click(function() {
@@ -210,7 +235,46 @@
 		$(".table tr").slice(1).remove();
 
 		base = $("#cmbBase").val();
-		randomBase = Math.floor(Math.random() * 11);
+		let esUnico = false;
+		let icon = "success";
+
+		while (!esUnico) {
+			randomBase = Math.floor(Math.random() * 11);
+			resultado = base * randomBase;
+
+			const titleText = `Has acabado todas las multiplicaciones de la tabla del ${base}.`;
+			if (aciertos < 6) {
+				icon = "error";
+			}
+
+			const message = `${aciertos} / 11 aciertos`;
+			const footer = '<button id="button_reset" class="btn btn-primary"> Reiniciar </button>';
+
+			// Verificacion
+			const combinacion = `${base}x${randomBase}`;
+			if (combinacionesGeneradas.length === 11) {
+				createAlert("Puntuación", titleText, message, icon, false, footer);
+				break;
+			}
+			if (!combinacionesGeneradas.includes(combinacion)) {
+				combinacionesGeneradas.push(combinacion); // Almacena la nueva combinación
+				esUnico = true; // Sale del bucle
+			}
+		}
+
+		// Acción personalizada para el reset button
+		document.addEventListener('click', (e) => {
+			if (e.target && e.target.id === 'button_reset') {
+				$(".table tr").slice(1).remove();
+				$("#btn1").prop("disabled", false); //Activo boton "Iniciar"
+				$(".verificar, .suivante").prop("disabled", true); //Desactivo boton "Enviar y Siguiente"
+				combinacionesGeneradas = []; //Reinicio el array de combinaciones
+				aciertos = 0; //Reinicio la puntuación
+				Swal.close(); // Opcional: Cierra la alerta si es necesario
+			}
+		});
+
+		console.log(combinacionesGeneradas);
 
         const trDinamico = `
             <tr>
@@ -233,6 +297,7 @@
 		$(".verificar, .numero").prop("disabled", false);
 		$(".suivante").prop("disabled", true);
 
+		$(".numero").trigger("focus");
 	});
 
 	//Funcion que detecta el cambio de tabla:
