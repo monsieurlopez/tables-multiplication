@@ -114,8 +114,8 @@ section {
   margin: 2rem auto;
 }
 
-.modal {
-  z-index: 999 !important; /* Valor por defecto para Bootstrap modals */
+.swal2-container .swal2-popup {
+  font-size: 3em;
 }
 
 /* ESTILOS PARA LA TABLA */
@@ -220,6 +220,7 @@ section {
     padding: 1.5rem;
     margin: 1rem auto;
   }
+
 }
 
 /* Media query para dispositivos con ancho menor a 576px */
@@ -232,4 +233,5 @@ section {
   .nav-container-items {
     font-size: 6rem !important;
   }
+
 }
