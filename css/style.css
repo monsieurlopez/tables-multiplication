@@ -114,6 +114,10 @@ section {
   margin: 2rem auto;
 }
 
+.modal {
+  z-index: 999 !important; /* Valor por defecto para Bootstrap modals */
+}
+
 /* ESTILOS PARA LA TABLA */
 @font-face {
   font-family: "Kids-Brush";

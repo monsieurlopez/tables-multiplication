@@ -156,7 +156,8 @@
       </table>
     </section>
 
-    <script>
+    <script type="module">
+
       (function () {
         var contador = 0;
 
@@ -184,6 +185,7 @@
         //Funcion que detecta el cambio de base:
         $("#cmbBase").on("change", function () {
           initTable();
+          createAlert("Hola", "success");
         });
       })();
     </script>

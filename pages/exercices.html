@@ -147,12 +147,14 @@
 
 (function(){
 
-	var base = 0;
-    var randomBase = 0;
-    var resultado = 0;
+	let base = 0;
+    let randomBase = 0;
+    let resultado = 0;
+	let base2 = 0;
+
 
 	$(".numero").keypress(function(event) {
-    	var inputValue = event.charCode;
+    	let inputValue = event.charCode;
     	if (inputValue < 48 || inputValue > 57) {
       	event.preventDefault();
     	}
@@ -169,14 +171,28 @@
 
 	$(".btn-comenzar, .verificar, .suivante").prop("disabled", true);
 
+	let combinacionesGeneradas = [];
+
 	//Código para el boton 2:
 	$(".btn-comenzar").on("click", function(){
 		$("#btn1").prop("disabled", true);
 
-		base2 = Math.floor(Math.random() * outputValue) + 1;
+    	let esUnico = false;
 
-		randomBase = Math.floor(Math.random() * 11);
-		resultado = base2 * randomBase;
+		while (!esUnico) {
+			base2 = Math.floor(Math.random() * outputValue) + 1;
+			randomBase = Math.floor(Math.random() * 11);
+			resultado = base2 * randomBase;
+
+			// Verificacion
+			const combinacion = `${base2}x${randomBase}`;
+			if (!combinacionesGeneradas.includes(combinacion)) {
+				combinacionesGeneradas.push(combinacion); // Almacena la nueva combinación
+				esUnico = true; // Sale del bucle
+			}
+		}
+
+		console.log(combinacionesGeneradas);
 
 		const trDinamico = `
             <tr>
@@ -216,9 +232,22 @@
 	$(".suivante").click(function() {
 		$(".table tr").slice(1).remove();
 
-		base2 = Math.floor(Math.random() * outputValue) + 1;
-		randomBase = Math.floor(Math.random() * 11);
-		resultado = base2 * randomBase;
+		let esUnico = false;
+
+		while (!esUnico) {
+			base2 = Math.floor(Math.random() * outputValue) + 1;
+			randomBase = Math.floor(Math.random() * 11);
+			resultado = base2 * randomBase;
+
+			// Verificacion
+			const combinacion = `${base2}x${randomBase}`;
+			if (!combinacionesGeneradas.includes(combinacion)) {
+				combinacionesGeneradas.push(combinacion); // Almacena la nueva combinación
+				esUnico = true; // Sale del bucle
+			}
+		}
+
+		console.log(combinacionesGeneradas);
 
 		const trDinamico = `
             <tr>

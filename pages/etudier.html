@@ -70,7 +70,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <!-- Fin Font Awesome -->
+  <!-- Fin Font Awesome -->
+
+  <!-- Sweetalert 2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Fin Sweetalert 2 -->
   </head>
 
   <body>
@@ -130,22 +134,30 @@
 			</table>
     </section>
 
-    <script>
+    <script type="module">
+
+      import { createAlert } from '../js/lib/tools.js';
+
       (function () {
-        var contador = 0;
+        let contador = 0;
 
         $("#btn1").on("click", function () {
-          var base = $("#cmbBase").val();
+          let base = $("#cmbBase").val();
+          if (contador === 9) {
+            $("#btn1").prop("disabled", true);
+          }
+
           if (!base) {
-            alert("Selecciona una tabla");
+            createAlert("Selecciona una tabla", "Selecciona una tabla y haz click en 'Comienza'", "warning", "Aceptar");
             return;
+
           }
           if (contador <= 9) {
             contador++;
             if (contador >= 1) {
               $("#btn1").html("Agrega otra línea");
             }
-            var trDinamico =
+            const trDinamico =
               "<tr><td>" +
               base +
               "</td><td>x</td><td>" +
@@ -154,8 +166,6 @@
               base * contador +
               "</td></tr>";
             $(".table").append(trDinamico);
-          } else {
-            alert("En este nivel, aprendemos hasta el número 10");
           }
         });
 
@@ -164,6 +174,8 @@
           contador = 0;
           $(".table tr").slice(1).remove();
           $("#btn1").html("Comienza");
+          $("#btn1").prop("disabled", false);
+
         });
 
       })();
