@@ -98,15 +98,28 @@
 
 <section class="section-tables container-lg">
 	<div class="control_challenge text-center">
-
-		<label for="customRange2" class="form-label label_text"> Elige la tabla hasta la que quieres hacer multiplicaciones </label>
-		<input type="range" class="form-range slideToUnlock" min="1" max="10" id="customRange2">
-		<h3 id="output" class="level_challenge"> Nivel </h3>
-	
-		<button type="button" class="btn btn-primary btn-comenzar" > Comenzar </button>
+		<label for="customRange" class="form-label label_text">Elige el nivel de dificultad: </label>
+		<input type="range" class="form-range slideToUnlock" min="0" max="4" step="1" id="customRange">
+		<h3 id="output" class="level_challenge"> Media </h3>
 	</div>
 	
-    
+	<div class="control_challenge text-center">
+
+		<label for="customRange2" class="form-label label_text"> Elige la tabla hasta la que quieres hacer multiplicaciones: </label>
+		<input type="range" class="form-range slideToUnlock" min="1" max="10" id="customRange2">
+		<h3 id="output2" class="level_challenge"> Nivel </h3>
+	
+	</div>
+
+	<div class="control_challenge text-center">
+		<label for="customRange3" class="form-label label_text">Elige el número de operaciones: </label>
+		<input type="range" class="form-range slideToUnlock" min="10" max="110" step="1" id="customRange3">
+		<h3 id="output3" class="level_challenge"> Operaciones </h3>
+
+		<button type="button" class="btn btn-primary btn-comenzar" > Comenzar </button>
+
+	</div>
+	    
 	<table class="table table-borderless text-center table-adapted">
 		<tr>
 			<th> Base </th>
@@ -270,15 +283,58 @@
 		$(".suivante").prop("disabled", true);
 	});
 	
-	//Control de nivel:
+	//Nivel de dificultad de tablas:
 	const range = document.getElementById('customRange2');
-	const output = document.getElementById('output');
+	const output = document.getElementById('output2');
 	let outputValue;
 
 	range.addEventListener('input', () => {
-  	outputValue = range.value;
-  	output.textContent = outputValue;
+		outputValue = range.value;
+		output.textContent = outputValue;
 	});
+
+	//Nivel de dificultad:
+	document.addEventListener("DOMContentLoaded", () => {
+		const rangeInput = document.getElementById("customRange");
+		const output = document.getElementById("output");
+
+		// Mapeo de valores numéricos a palabras
+		const levels = ["Muy baja", "Baja", "Media", "Alta", "Muy alta"];
+
+		// Actualiza el texto del nivel basado en el rango
+		rangeInput.addEventListener("input", () => {
+			const levelIndex = parseInt(rangeInput.value, 10); // Convierte el valor a número
+			output.textContent = `${levels[levelIndex]}`;
+		});
+
+		// Inicializa el valor del texto
+		output.textContent = `${levels[rangeInput.value]}`;
+	});
+
+	//Control número máximo de operaciones
+	document.addEventListener("DOMContentLoaded", () => {
+		const rangeTable = document.getElementById("customRange2");
+		const rangeMaxOps = document.getElementById("customRange3");
+		const outputMaxOps = document.getElementById("output3");
+
+		// Actualizar el rango de operaciones dinámicamente
+		rangeTable.addEventListener("input", () => {
+			const selectedTable = parseInt(rangeTable.value); // Valor de la tabla seleccionada
+			const maxOps = Math.max(10, selectedTable * 11); // Calcula el máximo dinámico, mínimo 10
+
+			// Actualiza el rango dinámicamente
+			rangeMaxOps.max = maxOps;
+			rangeMaxOps.value = maxOps; // Establece el valor por defecto al máximo
+			outputMaxOps.textContent = maxOps; // Actualiza el texto del output
+		});
+
+		// Actualizar el valor seleccionado en el rango dinámico
+		rangeMaxOps.addEventListener("input", () => {
+			outputMaxOps.textContent = rangeMaxOps.value; // Muestra el valor actual
+		});
+	});
+
+
 
 
 })();
