@@ -124,6 +124,13 @@ section {
   padding: 2rem;
 }
 
+.control_challenge label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
 /* ESTILOS PARA LA TABLA */
 @font-face {
   font-family: "Kids-Brush";

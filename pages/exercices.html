@@ -98,60 +98,68 @@
 
 <section class="section-tables container-lg">
 	<div class="control_challenge text-center">
-		<label for="customRange" class="form-label label_text">Elige el nivel de dificultad: </label>
+		<label for="customRange" class="form-label label_text">Elige el nivel de dificultad: <h3 id="output" class="level_challenge"> Media </h3></label>
 		<input type="range" class="form-range slideToUnlock" min="0" max="4" step="1" id="customRange">
-		<h3 id="output" class="level_challenge"> Media </h3>
 	</div>
 	
 	<div class="control_challenge text-center">
 
-		<label for="customRange2" class="form-label label_text"> Elige la tabla hasta la que quieres hacer multiplicaciones: </label>
+		<label for="customRange2" class="form-label label_text"> Elige la tabla hasta la que quieres hacer multiplicaciones: <h3 id="output2" class="level_challenge"> Nivel </h3></label>
 		<input type="range" class="form-range slideToUnlock" min="1" max="10" id="customRange2">
-		<h3 id="output2" class="level_challenge"> Nivel </h3>
 	
 	</div>
 
 	<div class="control_challenge text-center">
-		<label for="customRange3" class="form-label label_text">Elige el número de operaciones: </label>
+		<label for="customRange3" class="form-label label_text">Elige el número de operaciones: <h3 id="output3" class="level_challenge"> Operaciones </h3></label>
 		<input type="range" class="form-range slideToUnlock" min="10" max="110" step="1" id="customRange3">
-		<h3 id="output3" class="level_challenge"> Operaciones </h3>
 
-		<button type="button" class="btn btn-primary btn-comenzar" > Comenzar </button>
-
-	</div>
-	    
-	<table class="table table-borderless text-center table-adapted">
-		<tr>
-			<th> Base </th>
-			<th> x </th>
-			<th> Número </th>
-			<th> = </th>
-			<th> Resultado </th>
-		</tr>
-	</table>
-	
-	<div class="control-operations text-center">
-
-		<div class="unique">
-			<button class="btn btn-primary verificar"> Enviar </button> <button class="btn btn-primary suivante"> Operación siguiente </button>
-		</div>
-		<div class="icons">
-
-			<div id="right" class="d-none">
-				<i class="fa-solid fa-thumbs-up"></i>
-			<h3 class=""> Correcto <h3>
-			</div>
-
-			<div id="wrong" class="d-none text-center" >
-				<i class="fa-solid fa-thumbs-down"></i>
-				<h3 class=""> Incorrecto <h3>
-				<h4 class="d-none resultado"> </h4>
-			</div>
-
-		</div>
-
+		<button type="button" class="btn btn-primary btn-comenzar mt-4"> Comenzar </button>
 	</div>
 
+</section>
+<section>
+	<div class="modal modal-lg" id="modal_reto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">		
+		<div class="modal-dialog">
+			<div class="modal-content">
+			  	<div class="modal-header">
+					<h1 class="modal-title fs-5" id="modal_reto_label"></h1>
+					<button type="button" class="btn-close close-modal" data-bs-dismiss="modal" aria-label="Close"></button>
+			  	</div>
+				<div class="modal-body">
+					<table class="table text-center table-adapted">
+						<tr>
+							<th> Base </th>
+							<th> x </th>
+							<th> Número </th>
+							<th> = </th>
+							<th> Resultado </th>
+						</tr>
+					</table>
+				</div>
+				<div class="modal-footer d-flex justify-content-center">
+					<div class="control-operations text-center">
+
+						<div class="unique">
+							<button class="btn btn-primary verificar"> Enviar </button> <button class="btn btn-primary suivante"> Operación siguiente </button>
+						</div>
+						<div class="icons">
+				
+							<div id="right" class="d-none">
+								<i class="fa-solid fa-thumbs-up"></i>
+							<h3 class=""> Correcto <h3>
+							</div>
+				
+							<div id="wrong" class="d-none text-center" >
+								<i class="fa-solid fa-thumbs-down"></i>
+								<h3 class=""> Incorrecto <h3>
+								<h4 class="d-none resultado"> </h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 
 
@@ -163,7 +171,6 @@
     let randomBase = 0;
     let resultado = 0;
 	let base2 = 0;
-
 
 	$(".numero").keypress(function(event) {
     	let inputValue = event.charCode;
@@ -187,6 +194,16 @@
 
 	//Código para el boton 2:
 	$(".btn-comenzar").on("click", function(){
+		if ($("#modal_reto").length) {
+			//Añadimos el modal al hacer click en "Comenzar"
+			const MODAL = new bootstrap.Modal(document.getElementById('modal_reto'));
+			$(".section-tables").fadeTo("fast", 0.15) //Añadimos un fade al fondo
+			MODAL.show();
+		}
+
+		let nivelDificultad = $("#output").text();
+		$("#modal_reto_label").html(`Nivel de dificultad: ${nivelDificultad}`)
+
 		$("#btn1").prop("disabled", true);
 
     	let esUnico = false;
@@ -334,7 +351,12 @@
 		});
 	});
 
-
+	//Eliminar el fade cuando se cierra el modal
+	$(".close-modal")
+		.off("click")
+		.on("click",()  => {
+			$(".section-tables").fadeTo("fast", 1)
+		})
 
 
 })();
